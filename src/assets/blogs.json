@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "title": "Mastering Vue.js for Web Development",
+      "excerpt": "Learn how Vue.js can simplify front-end development and enhance UI/UX.",
+      "author": "Jane Doe",
+      "date": "2024-08-15",
+      "category": "Web Development",
+      "tags": ["Vue.js", "JavaScript", "Frontend"],
+      "image": "vue-js-guide.jpg",
+      "content": "Vue.js is a progressive JavaScript framework..."
+    },
+    {
+      "id": 2,
+      "title": "The Future of WordPress Development",
+      "excerpt": "Discover the emerging trends and tools shaping WordPress in 2024.",
+      "author": "John Smith",
+      "date": "2024-08-10",
+      "category": "Web Development",
+      "tags": ["WordPress", "Web Design", "Trends"],
+      "image": "wordpress-trends.jpg",
+      "content": "WordPress has remained the go-to CMS for years..."
+    },
+    {
+      "id": 3,
+      "title": "Top JavaScript Frameworks in 2024",
+      "excerpt": "A comprehensive comparison of the most popular JS frameworks.",
+      "author": "Emily Clarke",
+      "date": "2024-07-25",
+      "category": "JavaScript",
+      "tags": ["Vue.js", "React", "Angular"],
+      "image": "js-frameworks.jpg",
+      "content": "JavaScript frameworks have revolutionized front-end development..."
+    },
+    {
+      "id": 4,
+      "title": "Designing Responsive Websites: A Complete Guide",
+      "excerpt": "Learn how to create responsive designs that work on all devices.",
+      "author": "Alex Lee",
+      "date": "2024-07-20",
+      "category": "Web Design",
+      "tags": ["CSS", "Responsive Design", "Web Design"],
+      "image": "responsive-design.jpg",
+      "content": "Responsive web design is a crucial aspect of modern websites..."
+    },
+    {
+      "id": 5,
+      "title": "Why Vue.js is Perfect for Progressive Web Apps",
+      "excerpt": "An in-depth guide to building PWAs with Vue.js.",
+      "author": "Sarah Connor",
+      "date": "2024-08-01",
+      "category": "Web Development",
+      "tags": ["Vue.js", "PWA", "Frontend"],
+      "image": "vue-pwa.jpg",
+      "content": "Progressive Web Apps are the future of web development..."
+    }
+  ]
+  
