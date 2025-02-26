@@ -10,7 +10,7 @@
       "id": 2,
       "title": "Frontend Development",
       "description": "Creating responsive, interactive, and modern UIs using the latest frontend technologies.",
-      "icon": "frontend-icon.svg"
+      "icon": "../assets/icons/frontend-icon.svg"
     },
     {
       "id": 3,

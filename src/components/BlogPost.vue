@@ -91,7 +91,9 @@
   
   <style scoped>
   .blog-post {
+    margin-top: 40px;
     padding: 60px 20px;
+   
   }
   .blog-title {
     text-align: center;
