@@ -1,39 +1,52 @@
 <template>
   <section id="testimonials" class="testimonials-section">
     <div class="container">
-      <!-- Section Title -->
-      <h2 class="section-title" data-aos="fade-up">What People Say</h2>
+      <h2 class="section-title" data-aos="fade-up">Client Testimonials</h2>
       <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-        Hear from my clients and colleagues about their experiences.
+        Discover what others say about working with me
       </p>
 
-      <!-- Testimonials Carousel -->
-      <div class="testimonials-carousel" data-aos="fade-up" data-aos-delay="200">
-        <div
-          class="testimonial-cards-wrapper"
-          :style="{ transform: `translateX(-${currentTestimonial * 33.33}%)` }"
-        >
-          <div
+      <div class="carousel-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="carousel-track" :style="trackStyle">
+          <div 
             class="testimonial-card"
             v-for="(testimonial, index) in testimonials"
             :key="testimonial.id"
+            :class="{ 'active': index === currentIndex }"
           >
-            <div class="testimonial-photo">
-              <!-- <img :src="`/assets/photos/${testimonial.photo}`" :alt="testimonial.name" /> -->
-              
+            <div class="card-header">
+              <img 
+                :src="`/assets/photos/${testimonial.photo}`" 
+                :alt="testimonial.name"
+                class="user-avatar"
+              >
+              <div class="user-info">
+                <h4 class="user-name">{{ testimonial.name }}</h4>
+                <p class="user-role">{{ testimonial.designation }}</p>
+              </div>
             </div>
-            <div class="testimonial-content">
-              <p class="testimonial-feedback">"{{ testimonial.feedback }}"</p>
-              <h4 class="testimonial-name">{{ testimonial.name }}</h4>
-              <span class="testimonial-designation">{{ testimonial.designation }}</span>
+            <p class="testimonial-text">"{{ testimonial.feedback }}"</p>
+            <div class="rating">
+              ★★★★★
             </div>
           </div>
         </div>
 
-        <!-- Navigation Controls -->
         <div class="carousel-controls">
-          <button @click="prevTestimonial" class="carousel-btn prev-btn">❮</button>
-          <button @click="nextTestimonial" class="carousel-btn next-btn">❯</button>
+          <button 
+            @click="prevSlide" 
+            class="control-btn prev"
+            aria-label="Previous"
+          >
+            <span class="arrow">‹</span>
+          </button>
+          <button 
+            @click="nextSlide" 
+            class="control-btn next"
+            aria-label="Next"
+          >
+            <span class="arrow">›</span>
+          </button>
         </div>
       </div>
     </div>
@@ -44,147 +57,170 @@
 import testimonials from "@/assets/testimonials.json";
 
 export default {
-  name: "Testimonials",
+  name: "TestimonialsCarousel",
   data() {
     return {
-      testimonials: testimonials,
-      currentTestimonial: 0,
-      slideInterval: null,
+      testimonials,
+      currentIndex: 0,
+      cardWidth: 300, // Match your CSS card width
+      visibleCards: 1, // Number of cards visible at once
     };
   },
-  created() {
-    this.startAutoSlide();
-  },
-  destroyed() {
-    clearInterval(this.slideInterval);
+  computed: {
+    trackStyle() {
+      const offset = -(this.currentIndex * this.cardWidth);
+      return {
+        transform: `translateX(${offset}px)`,
+        width: `${this.testimonials.length * this.cardWidth}px`
+      };
+    }
   },
   methods: {
-    prevTestimonial() {
-      this.currentTestimonial =
-        (this.currentTestimonial - 1 + this.testimonials.length / 3) %
-        (this.testimonials.length / 3);
+    nextSlide() {
+      this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
     },
-    nextTestimonial() {
-      this.currentTestimonial =
-        (this.currentTestimonial + 1) % (this.testimonials.length / 3);
-    },
-    startAutoSlide() {
-      this.slideInterval = setInterval(() => {
-        this.nextTestimonial();
-      }, 5000); // Auto-slide every 5 seconds
-    },
-  },
+    prevSlide() {
+      this.currentIndex = (this.currentIndex - 1 + this.testimonials.length) % this.testimonials.length;
+    }
+  }
 };
 </script>
 
 <style scoped>
 .testimonials-section {
-  padding: 60px 20px;
-  background: #f4f4f9; /* Soft background */
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
 .section-title {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 10px;
-  font-weight: 600;
+  font-weight: 700;
   color: #333;
+  margin-bottom: 20px;
 }
 
 .section-subtitle {
   text-align: center;
-  color: #777;
-  margin-bottom: 30px;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
 }
 
-.testimonials-carousel {
+.carousel-container {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
   overflow: hidden;
-  width: 100%;
-  height: 400px;
-  margin-top: 30px;
 }
 
-.testimonial-cards-wrapper {
+.carousel-track {
   display: flex;
-  transition: transform 0.6s ease;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 30px;
 }
 
 .testimonial-card {
-  width: 33.33%; /* Three testimonials visible at once */
-  margin: 0 15px;
-  text-align: center;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 300px;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0.5;
+  transform: scale(0.9);
 }
 
-.testimonial-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+.testimonial-card.active {
+  opacity: 1;
+  transform: scale(1);
 }
 
-.testimonial-photo img {
-  width: 100px;
-  height: 100px;
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-avatar {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin-right: 15px;
   object-fit: cover;
+  border: 3px solid #4CAF50;
 }
 
-.testimonial-feedback {
-  font-size: 1.1rem;
-  font-style: italic;
-  margin-bottom: 15px;
-  color: #555;
-}
-
-.testimonial-name {
-  font-size: 1.3rem;
-  font-weight: bold;
+.user-name {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
   color: #333;
 }
 
-.testimonial-designation {
-  font-size: 1rem;
-  color: #777;
+.user-role {
+  font-size: 0.9rem;
+  color: #666;
 }
 
-.carousel-controls {
+.testimonial-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.rating {
+  color: #FFD700;
+  font-size: 1.4rem;
+}
+
+.control-btn {
   position: absolute;
   top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
   transform: translateY(-50%);
-  z-index: 10;
-}
-
-.carousel-btn {
-  background-color: #4caf50;
-  color: white;
+  width: 50px;
+  height: 50px;
+  background: rgba(255,255,255,0.9);
   border: none;
-  padding: 10px;
-  font-size: 1.5rem;
   border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.carousel-btn:hover {
-  background-color: #388e3c;
+.control-btn:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
 }
 
-.prev-btn {
-  left: 10px;
+.control-btn.prev {
+  left: 0;
 }
 
-.next-btn {
-  right: 10px;
+.control-btn.next {
+  right: 0;
+}
+
+.arrow {
+  font-size: 2rem;
+  color: #4CAF50;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    padding: 0 30px;
+  }
+  
+  .testimonial-card {
+    flex: 0 0 280px;
+  }
+  
+  .control-btn {
+    width: 40px;
+    height: 40px;
+  }
 }
 </style>
