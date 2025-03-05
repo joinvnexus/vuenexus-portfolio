@@ -41,6 +41,7 @@
   
   /* Hero Section */
   .hero {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,6 +142,11 @@
   
   /* Responsive Design */
   @media (max-width: 768px) {
+    .hero {
+      margin-top: 60px;
+      padding: 60px 20px;
+      text-align: center;
+    }
     .container {
       flex-direction: column;
       text-align: center;
