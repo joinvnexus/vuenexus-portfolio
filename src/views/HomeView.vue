@@ -3,12 +3,12 @@
 
     <HeroSection  @smoothScroll="handleSmoothScroll" />
     <AboutMe @smoothScroll="handleSmoothScroll" />
-    <Skills />
+    <Skills2 />
     <Portfolio />
     <Services/>
     <Testimonials/>
     <Blog/>
-    <Contact/>
+    <Contact />
 
   </div>
 </template>
@@ -17,7 +17,7 @@
 
 import HeroSection from '@/components/HeroSection.vue'
 import AboutMe from '@/components/AboutMe.vue'
-import Skills from '@/components/Skills.vue';
+import Skills2 from '@/components/Skills2.vue';
 import Portfolio from '@/components/Portfolio.vue';
 import Services from '@/components/Services.vue';
 import Testimonials from '@/components/Testimonials.vue';
@@ -37,7 +37,7 @@ export default {
 
     HeroSection,
     AboutMe,
-    Skills,
+    Skills2,
     Portfolio,
     Services,
     Testimonials,

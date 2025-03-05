@@ -3,32 +3,32 @@
       "id": 1,
       "title": "WordPress Development",
       "description": "Custom WordPress themes, plugins, and website optimization to meet your unique business needs.",
-      "icon": "public/wordpress-icon.svg"
-      
+      "icon": "wordpress-icon.svg" 
     },
     {
       "id": 2,
       "title": "Frontend Development",
       "description": "Creating responsive, interactive, and modern UIs using the latest frontend technologies.",
-      "icon": "/assets/icons/frontend-icon.svg"
+      "icon": "frontend-icon.svg"
     },
     {
       "id": 3,
       "title": "Website Maintenance",
       "description": "Regular updates, security checks, and performance improvements to keep your website running smoothly.",
-      "icon": "/assets/icons/maintenance-icon.svg"
+      "icon": "maintenance-icon.svg"
     },
     {
       "id": 4,
       "title": "SEO Optimization",
       "description": "Enhance your website’s visibility and ranking with proven SEO strategies and best practices.",
-      "icon": "/assets/icons/seo-icon.svg"
+      "icon": "seo-icon.svg"
     },
     {
       "id": 5,
       "title": "E-commerce Development",
       "description": "Building high-performance e-commerce platforms using WooCommerce and custom integrations.",
-      "icon": "/assets/icons/ecommerce-icon.svg"
+      "icon": "ecommerce-icon.svg"
     }
+    
   ]
   

@@ -16,7 +16,7 @@
           >
             <div class="card-header">
               <img 
-                :src="`/assets/photos/${testimonial.photo}`" 
+                :src="getImgPath(testimonial.photo)" 
                 :alt="testimonial.name"
                 class="user-avatar"
               >
@@ -60,7 +60,7 @@ export default {
   name: "TestimonialsCarousel",
   data() {
     return {
-      testimonials,
+      testimonials: testimonials,
       currentIndex: 0,
       cardWidth: 300, // Match your CSS card width
       visibleCards: 1, // Number of cards visible at once
@@ -81,6 +81,10 @@ export default {
     },
     prevSlide() {
       this.currentIndex = (this.currentIndex - 1 + this.testimonials.length) % this.testimonials.length;
+    },
+    getImgPath(photo) {
+      return new URL(`../assets/photos/${photo}`, import.meta.url).href;
+      
     }
   }
 };

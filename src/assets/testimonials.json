@@ -3,42 +3,42 @@
       "id": 1,
       "name": "John Doe",
       "designation": "CEO, TechCorp",
-      "photo": "https://picsum.photos/536/354",
+      "photo": "jane-smith.jpg",
       "feedback": "An exceptional developer with a keen eye for detail. Delivered a stunning WordPress website for our business."
     },
     {
       "id": 2,
       "name": "Jane Smith",
       "designation": "Founder, CreativeStudio",
-      "photo": " https://picsum.photos/536/354",
+      "photo": "john-doe.jpg",
       "feedback": "Absolutely loved the frontend design! The animations and responsiveness were spot on."
     },
     {
       "id": 3,
       "name": "Mark Wilson",
       "designation": "Manager, Ecomify",
-      "photo": "mark-wilson.jpg",
+      "photo": "jane-smith.jpg",
       "feedback": "A true professional! Developed a custom WooCommerce store that perfectly matches our brand identity."
     },
     {
       "id": 4,
       "name": "Emily Brown",
       "designation": "Freelance Designer",
-      "photo": "emily-brown.jpg",
+      "photo": "john-doe.jpg",
       "feedback": "Working with them was seamless. Delivered pixel-perfect designs and smooth user interactions."
     },
     {
       "id": 5,
       "name": "David Johnson",
       "designation": "Co-founder, DevWorks",
-      "photo": "david-johnson.jpg",
+      "photo": "jane-smith.jpg",
       "feedback": "The quality of work speaks for itself. A true team player and highly professional developer!"
     },
     {
       "id": 6,
       "name": "Megan Smith",
       "designation": "CEO, StartupHub",
-      "photo": "megan-smith.jpg",
+      "photo": "john-doe.jpg",
       "feedback": "The attention to detail is outstanding. The website was beautifully designed and optimized for performance."
     }
    

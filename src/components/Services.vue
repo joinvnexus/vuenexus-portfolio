@@ -1,126 +1,220 @@
 <template>
-    <section id="services" class="services-section">
-      <div class="container">
-        <!-- Section Title -->
-        <h2 class="section-title" data-aos="fade-up">My Services</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          Discover the wide range of services I offer to help you succeed online.
-        </p>
-  
-        <!-- Services Grid -->
-        <div class="services-grid" data-aos="fade-up" data-aos-delay="200">
-          <div
-            v-for="service in services"
-            :key="service.id"
-            class="service-card"
-          >
-            <div class="card-header" @click="toggleService(service.id)">
+  <section id="services" class="services-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">My Services</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Discover the wide range of services I offer to help you succeed online.
+      </p>
+
+      <div class="services-grid" data-aos="fade-up" data-aos-delay="200">
+        <div
+          v-for="service in services"
+          :key="service.id"
+          class="service-card"
+          :class="{ 'is-active': expandedService === service.id }"
+        >
+          <div class="card-header" @click="toggleService(service.id)">
+            <div class="icon-wrapper">
+              
+              <!-- Vite-compatible image path -->   
               <img
-                :src="`/assets/icons/${service.icon}`"
+                :src="getIconPath(service.icon)"
                 :alt="service.title"
                 class="service-icon"
+                loading="lazy"
               />
-              <h3>{{ service.title }}</h3>
-              <button class="expand-btn">
-                <span v-if="expandedService === service.id">-</span>
-                <span v-else>+</span>
-              </button>
             </div>
+            <h3 class="service-title">{{ service.title }}</h3>
+            <button class="expand-btn" :aria-expanded="expandedService === service.id">
+              <span class="chevron"></span>
+            </button>
+          </div>
+          <transition name="expand">
             <div
-              class="card-body"
               v-if="expandedService === service.id"
+              class="card-body"
               data-aos="fade-in"
             >
-              <p>{{ service.description }}</p>
+              <p class="service-description">{{ service.description }}</p>
             </div>
-          </div>
+          </transition>
         </div>
       </div>
-    </section>
-  </template>
-  
-  <script>
-  import services from "@/assets/services.json";
-  
-  export default {
-    name: "Services",
-    data() {
-      return {
-        services: services,
-        expandedService: null // Tracks which service is expanded
-      };
+    </div>
+  </section>
+</template>
+
+<script>
+import services from "@/assets/services.json";
+
+export default {
+  name: "Services",
+  data() {
+    return {
+      services: services,
+      expandedService: null
+    };
+  },
+  methods: {
+    toggleService(serviceId) {
+      this.expandedService = this.expandedService === serviceId ? null : serviceId;
     },
-    methods: {
-      toggleService(serviceId) {
-        // Toggle the expanded service
-        this.expandedService =
-          this.expandedService === serviceId ? null : serviceId;
-      }
+    // Vite-specific asset handling
+    getIconPath(iconName) {
+      return new URL(`../assets/icons/${iconName}`, import.meta.url).href;
+      
     }
-  };
-  </script>
-  
-  <style scoped>
-  .services-section {
-    padding: 60px 20px;
-    background: #f9f9f9;
   }
-  .section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  .section-subtitle {
-    text-align: center;
-    color: #666;
-    margin-bottom: 30px;
-  }
+};
+</script>
+
+<style scoped>
+.services-section {
+  padding: 80px 20px;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #7f8c8d;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.service-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  gap: 1rem;
+}
+
+.icon-wrapper {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: #4CAF5020;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  color: #2c3e50;
+  margin: 0;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.expand-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.chevron {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-left: 2px solid #4CAF50;
+  border-bottom: 2px solid #4CAF50;
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+}
+
+.service-card.is-active .chevron {
+  transform: rotate(135deg);
+}
+
+.card-body {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.service-description {
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin: 0;
+  z-index: 1;
+}
+
+.expand-enter-active,
+.expand-leave-active {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.expand-enter-from,
+.expand-leave-to {
+  opacity: 0;
+  max-height: 0;
+}
+
+.expand-enter-to,
+.expand-leave-from {
+  opacity: 1;
+  max-height: 200px;
+}
+
+@media (max-width: 768px) {
   .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr;
   }
-  .service-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-  }
-  .service-card:hover {
-    transform: translateY(-10px);
-  }
-  .card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background: #4caf50;
-    color: #fff;
-    cursor: pointer;
-  }
-  .service-icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 15px;
-  }
-  .card-header h3 {
-    flex-grow: 1;
-    font-size: 1.2rem;
-    margin: 0;
-  }
-  .expand-btn {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  .card-body {
-    padding: 20px;
-    background: #f9f9f9;
-    color: #666;
-  }
-  </style>
   
+  .card-header {
+    padding: 1rem;
+  }
+  
+  .service-title {
+    font-size: 1.1rem;
+  }
+}
+</style>

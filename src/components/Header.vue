@@ -2,8 +2,8 @@
   <header class="header">
     <div class="container">
       <!-- Logo -->
-      <div class="logo">
-        <h1>CmsTechy</h1>
+      <div class="logo" @click="GoHome">
+        <img src="../assets/logo.svg" alt=" Logo" class="logo-img" @click="GoHome" />
       </div>
 
       <!-- Navigation and CV Button -->
@@ -14,7 +14,7 @@
             <li><a href="#hero" @click="smoothScroll('#hero'); closeMenu()">Home</a></li>
             <li><a href="#about" @click="smoothScroll('#about'); closeMenu()">About</a></li>
             <li><a href="#portfolio" @click="smoothScroll('#portfolio'); closeMenu()">Portfolio</a></li>
-            <li><a href="#contact" @click="smoothScroll('#contact'); closeMenu()">Contact</a></li>
+            <!-- <li><a href="#contact" @click="smoothScroll('#contact'); closeMenu()">Contact</a></li> -->
             <li><a href="#blog" @click="smoothScroll('#blog'); closeMenu()">Blog</a></li>
             <li><a href="#services" @click="smoothScroll('#services'); closeMenu()">Services</a></li>
             <li><a href="#testimonials" @click="smoothScroll('#testimonials'); closeMenu()">Testimonials</a></li>
@@ -23,9 +23,9 @@
 
 
       </div>
-      <!-- CV Button -->
-      <div class="cv">
-        <input type="button" class="cv-btn" value="Download CV">
+      <!--Get in Touch -->
+      <div class="gettouch">
+        <button @click="$emit('contact', '#contact')" class="touch-btn">Get in Touch</button>
       </div>
       <!-- Hamburger Menu (for mobile) -->
       <div class="hamburger" @click="toggleMenu" :class="{ active: isMenuOpen }">
@@ -45,6 +45,9 @@
       };
     },
     methods: {
+      GoHome() {
+        this.$router.push('/');
+      },
       toggleMenu() {
         this.isMenuOpen = !this.isMenuOpen;
       },
@@ -83,7 +86,8 @@ body {
   top: 0;
   left: 0;
   z-index: 1000;
-  background: linear-gradient(135deg, #3e4c53, #48d165);
+  /* background: linear-gradient(135deg, #3e4c53, #48d165); */
+  background-color: #3e4c53;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -94,11 +98,21 @@ body {
   padding: 15px 20px;
 }
 
-.logo h1 {
-  font-size: 1.8rem;
-  color: #eceeec;
-  font-weight: bold;
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 50px;
 }
+.logo img {
+  margin-top: 20px;
+  width: 25vw;
+  height: auto;
+  cursor: pointer;
+}
+
 
 /* Navigation and CV Button Container */
 .nav-container {
@@ -125,33 +139,42 @@ body {
 .nav ul li a {
   text-decoration: none;
   color: #f5f0f0;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: all 0.8s;
 }
 
 .nav ul li a:hover {
-  color: #48d165;
+  background: linear-gradient(45deg, #4CAF50, #2196F3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: #48d165; */
 }
-
-.cv {
-  margin-left: 20px;
+.gettouch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.cv-btn {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  border: none;
+.gettouch .touch-btn {
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  background: linear-gradient(45deg, #4CAF50, #2196F3);
   color: #fff;
+  border: none;
+  border-radius: 30px;
   cursor: pointer;
-  border-radius: 5px;
-  font-size: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s;
+  /* margin-left: 20px; */
+}
+.gettouch .touch-btn:hover {
+  background: linear-gradient(45deg, #4CAF50, #2196F3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(51, 225, 231, 0.24);
 }
 
-.cv-btn:hover {
-  background-color: #2c3e50;
-}
 
 .hamburger {
   display: none;
@@ -185,8 +208,21 @@ body {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    background-color: #3e4c53;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .logo .logo-img{
+    width: 60vw;
+  }
   .hamburger {
     display: flex;
+    z-index: 999;
   }
 
   .nav {
@@ -215,7 +251,7 @@ body {
     margin: 20px 0;
   }
 
-  .cv {
+  .gettouch {
     display: none;
     /* Hide CV button on smaller screens */
   }

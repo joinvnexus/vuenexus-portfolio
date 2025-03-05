@@ -1,211 +1,280 @@
 <template>
-    <section class="about" id="about">
-      <div class="container">
-        <!-- Image Section -->
-        <div class="about-image" data-aos="fade-right">
-          <img src="https://picsum.photos/400/400" alt="About Me" />
-        </div>
-  
-        <!-- Content Section -->
-        <div class="about-content" data-aos="fade-left">
-          <h2>About Me</h2>
-          <p class="subtitle">A Glimpse Into Who I Am</p>
-          <p class="description">
-            Hi, I'm <span class="highlight">[Your Name]</span>, a passionate <span class="highlight">Frontend Developer</span> with expertise in crafting responsive and visually stunning websites. I thrive on creating engaging digital experiences and bringing designs to life.
-          </p>
-          <p class="description">
-            My journey is fueled by curiosity, creativity, and a drive to solve complex challenges through elegant code. Let's build something amazing together!
-          </p>
-  
-          <!-- Skills Progress Bars -->
-          <div class="skills">
-            <h3>My Skills</h3>
-            
-            <p><strong> <span>Vue.js</span> <span>HTML&CSS</span> <span>JavaScript</span> <span>WordPress</span> <span>Responsive Design</span> </strong></p>
-          
-          </div>
-  
-          <!-- Animated SVG -->
-          <div class="svg-icons">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="icon"
-              data-aos="zoom-in"
-            >
-              <path
-                d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-4-4h3V7h2v6h3l-4 4z"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="icon"
-              data-aos="zoom-in"
-            >
-              <path
-                d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-4-4h3V7h2v6h3l-4 4z"
-              />
-            </svg>
-          </div>
-  
-          <!-- Call to Action -->
-          <button class="btn-primary" @click="$emit('smoothScroll', '#portfolio')">
-            View My Work
-          </button>
-        </div>
+  <section class="about" id="about">
+    <div class="container">
+      <!-- Image Section -->
+      <div class="about-image" data-aos="fade-right">
+        <img src="https://picsum.photos/400/400" alt="About Me" />
       </div>
-    </section>
-  </template>
-  
-  <script>
-  export default {
-    name: "AboutMe",
-  };
-  </script>
-  
-  <style scoped>
-  /* About Section */
-  .about {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 20px;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  
+
+      <!-- Content Section -->
+      <div class="about-content" data-aos="fade-left">
+        <h2>About Me</h2>
+        <p class="subtitle">A Glimpse Into Who I Am</p>
+        <div class="description-container">
+          <p class="description">
+            Hi, I'm <span class="highlight">John Doe</span>, a passionate 
+            <span class="highlight">Frontend Developer</span> with expertise in 
+            crafting responsive and visually stunning websites.
+          </p>
+          <p class="description">
+            My journey is fueled by curiosity, creativity, and a drive to solve 
+            complex challenges through elegant code.
+          </p>
+        </div>
+
+        <!-- Skills -->
+        <div class="skills">
+          <h3>Core Competencies</h3>
+          <div class="skills-grid">
+            <span class="skill-badge">Vue.js</span>
+            <span class="skill-badge">HTML5/CSS3</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">WordPress</span>
+            <span class="skill-badge">Responsive Design</span>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value">150+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">98%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <button class="btn-primary" @click="$emit('smoothScroll', '#portfolio')">
+          <span>View My Work</span>
+          <svg class="arrow-icon" viewBox="0 0 24 24">
+            <path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "AboutMe",
+};
+</script>
+
+<style scoped>
+/* Variables */
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #2196F3;
+  --text-dark: #2c3e50;
+  --text-medium: #666;
+  --text-light: #888;
+  --bg-light: #f9f9f9;
+  --spacing-unit: 1rem;
+  --border-radius: 12px;
+  --transition-timing: 0.3s ease;
+}
+
+/* Base Styles */
+.about {
+  padding: 6rem 1rem;
+  background-color: var(--bg-light);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* Image Section */
+.about-image {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-timing);
+}
+
+.about-image:hover {
+  transform: translateY(-5px);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Content Section */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-medium);
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-medium);
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* Skills */
+.skills {
+  margin: 2rem 0;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.skill-badge {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: rgba(76, 175, 80, 0.1);
+  color: var(--primary-color);
+  border-radius: 2rem;
+  font-weight: 500;
+  transition: all var(--transition-timing);
+}
+
+.skill-badge:hover {
+  background: var(--primary-color);
+  color:var(--text-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+  cursor:grab;
+}
+
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.stat-card {
+  padding: 1.5rem;
+  background: rgba(76, 175, 80, 0.05);
+  border-radius: var(--border-radius);
+  text-align: center;
+  border: 1px solid rgba(76, 175, 80, 0.1);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+/* Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  background: linear-gradient(45deg, #4CAF50, #2196F3);
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all var(--transition-timing);
+  margin-top: 1rem;
+  z-index: 1;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+}
+
+.arrow-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+  transition: transform var(--transition-timing);
+}
+
+.btn-primary:hover .arrow-icon {
+  transform: translateX(3px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
   .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: auto;
+    gap: 3rem;
+    padding: 0 2rem;
   }
-  
-  /* Image Section */
-    .about-image {
-        margin-right: 30px;
-    }
-    
-  .about-image img {
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-primary {
     width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    justify-content: center;
   }
-  
-  /* Content Section */
-  .about-content {
-    flex: 1;
-    max-width: 600px;
+}
+
+@media (max-width: 480px) {
+  .skill-badge {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
   }
-  
-  .about-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #4caf50;
+
+  .stat-value {
+    font-size: 1.75rem;
   }
-  
-  .subtitle {
-    font-size: 1.25rem;
-    color: #555;
-    margin-bottom: 20px;
-  }
-  
+
   .description {
     font-size: 1rem;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    color: #666;
   }
-  
-  .highlight {
-    color: #ff5722;
-    font-weight: bold;
-  }
-  
-  /* Skills Progress Bars */
-  .skills {
-    margin: 30px 0;
-  }
-  
-  .skills h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .skills p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: #555;
-  }
-  
-  .skills p strong {
-    font-weight: 500;
-  }
-  
-  .skills span {
-    display: inline-block;
-    padding: 5px 10px;
-    margin-right: 10px;
-    border-radius: 20px;
-    background-color: #f0f0f0;
-    color: #333;
-    margin-top: 5px;
-  }
-  /* Animated SVG */
-  .svg-icons {
-    display: flex;
-    justify-content: flex-start;
-    gap: 15px;
-    margin: 20px 0;
-  }
-  
-  .svg-icons .icon {
-    width: 50px;
-    height: 50px;
-    fill: #4caf50;
-    transition: transform 0.3s;
-  }
-  
-  .svg-icons .icon:hover {
-    transform: scale(1.2);
-  }
-  
-  /* Button */
-  .btn-primary {
-    padding: 12px 24px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #4caf50;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .btn-primary:hover {
-    background-color: #388e3c;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .about-image {
-      margin-bottom: 20px;
-    }
-  
-    .about-content {
-      text-align: center;
-    }
-  }
-  </style>
-  
+}
+</style>

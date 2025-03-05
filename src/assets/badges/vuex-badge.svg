@@ -1,0 +1,14 @@
+<svg width="100" height="100" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer Triangle -->
+    <polygon points="64,8 8,112 120,112" fill="#42b883" />
+    <!-- Inner Lines -->
+    <line x1="64" y1="8" x2="64" y2="80" stroke="#fff"/>
+    <line x1="8" y1="112" x2="64" y2="80" stroke="#fff"/>
+    <line x1="120" y1="112" x2="64" y2="80" stroke="#fff"/>
+  </g>
+  <!-- Vuex Logo Text -->
+  <text x="50%" y="90%" font-size="16" fill="white" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold">
+    Vuex
+  </text>
+</svg>

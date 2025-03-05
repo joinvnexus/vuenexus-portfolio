@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header @contact="handleSmoothScroll"/>
     <!-- Add Transition with custom name -->
     <transition name="fade">
       <router-view />
@@ -17,6 +17,14 @@ export default {
   components: {
     Header,
     Footer,
+  },
+  methods: {
+    handleSmoothScroll(target) {
+      const element = document.querySelector(target);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    },
   },
 };
 </script>

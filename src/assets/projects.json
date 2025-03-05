@@ -4,7 +4,7 @@
     "title": "Custom WordPress Theme",
     "description": "A fully custom WordPress theme built for a corporate website.",
     "category": "WordPress",
-    "image": "https://picsum.photos/536/354",
+    "image": "protfolio1.jpg",
     "link": "https://example.com/project1"
   },
   {
@@ -12,7 +12,7 @@
     "title": "E-Commerce Platform",
     "description": "An e-commerce site built with WooCommerce and custom plugins.",
     "category": "WordPress",
-    "image": "https://picsum.photos/536/354",
+    "image": "protfolio2.jpg",
     "link": "https://example.com/project2"
   },
   {
@@ -20,7 +20,7 @@
     "title": "Portfolio Website",
     "description": "A responsive portfolio website for a freelancer.",
     "category": "Frontend",
-    "image": "https://picsum.photos/200/300",
+    "image": "protfolio3.jpg",
     "link": "https://example.com/project3"
   },
   {
@@ -28,7 +28,7 @@
     "title": "Landing Page Design",
     "description": "A modern, interactive landing page built with Vue.js.",
     "category": "Frontend",
-    "image": " https://picsum.photos/200/300",
+    "image": "protfolio4.jpg",
     "link": "https://example.com/project4"
   }
 ]

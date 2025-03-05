@@ -1,58 +1,79 @@
 [
-    {
-      "id": 1,
-      "title": "Mastering Vue.js for Web Development",
-      "excerpt": "Learn how Vue.js can simplify front-end development and enhance UI/UX.",
-      "author": "Jane Doe",
-      "date": "2024-08-15",
-      "category": "Web Development",
-      "tags": ["Vue.js", "JavaScript", "Frontend"],
-      "image": "vue-js-guide.jpg",
-      "content": "Vue.js is a progressive JavaScript framework..."
-    },
-    {
-      "id": 2,
-      "title": "The Future of WordPress Development",
-      "excerpt": "Discover the emerging trends and tools shaping WordPress in 2024.",
-      "author": "John Smith",
-      "date": "2024-08-10",
-      "category": "Web Development",
-      "tags": ["WordPress", "Web Design", "Trends"],
-      "image": "wordpress-trends.jpg",
-      "content": "WordPress has remained the go-to CMS for years..."
-    },
-    {
-      "id": 3,
-      "title": "Top JavaScript Frameworks in 2024",
-      "excerpt": "A comprehensive comparison of the most popular JS frameworks.",
-      "author": "Emily Clarke",
-      "date": "2024-07-25",
-      "category": "JavaScript",
-      "tags": ["Vue.js", "React", "Angular"],
-      "image": "js-frameworks.jpg",
-      "content": "JavaScript frameworks have revolutionized front-end development..."
-    },
-    {
-      "id": 4,
-      "title": "Designing Responsive Websites: A Complete Guide",
-      "excerpt": "Learn how to create responsive designs that work on all devices.",
-      "author": "Alex Lee",
-      "date": "2024-07-20",
-      "category": "Web Design",
-      "tags": ["CSS", "Responsive Design", "Web Design"],
-      "image": "responsive-design.jpg",
-      "content": "Responsive web design is a crucial aspect of modern websites..."
-    },
-    {
-      "id": 5,
-      "title": "Why Vue.js is Perfect for Progressive Web Apps",
-      "excerpt": "An in-depth guide to building PWAs with Vue.js.",
-      "author": "Sarah Connor",
-      "date": "2024-08-01",
-      "category": "Web Development",
-      "tags": ["Vue.js", "PWA", "Frontend"],
-      "image": "vue-pwa.jpg",
-      "content": "Progressive Web Apps are the future of web development..."
-    }
+  {
+    "id": 1,
+    "title": "Mastering Vue.js for Web Development",
+    "excerpt": "Learn how Vue.js can simplify front-end development and enhance UI/UX.",
+    "author": "Jane Doe",
+    "date": "2024-08-15",
+    "category": "Web Development",
+    "tags": ["Vue.js", "JavaScript", "Frontend"],
+    "image": "vue-js-guide.jpg",
+    "content": "Vue.js is a progressive JavaScript framework used for building user interfaces. It provides a reactive data binding and component-based architecture, making it easier to manage and scale complex web applications. In this guide, we'll cover the fundamental concepts of Vue.js, including directives, components, and state management, to help you become proficient in web development using Vue.js."
+  },
+  {
+    "id": 2,
+    "title": "The Future of WordPress Development",
+    "excerpt": "Discover the emerging trends and tools shaping WordPress in 2024.",
+    "author": "John Smith",
+    "date": "2024-08-10",
+    "category": "Web Development",
+    "tags": ["WordPress", "Web Design", "Trends"],
+    "image": "wordpress-trends.jpg",
+    "content": "WordPress has remained the go-to CMS for years, and its future looks brighter than ever. In this article, we'll explore the latest trends and tools that are transforming WordPress development. From the adoption of Gutenberg blocks and full-site editing to the integration of headless CMS and REST APIs, we'll discuss how these advancements are enhancing the flexibility and functionality of WordPress websites."
+  },
+  {
+    "id": 3,
+    "title": "Top JavaScript Frameworks in 2024",
+    "excerpt": "A comprehensive comparison of the most popular JS frameworks.",
+    "author": "Emily Clarke",
+    "date": "2024-07-25",
+    "category": "JavaScript",
+    "tags": ["Vue.js", "React", "Angular"],
+    "image": "js-frameworks.jpg",
+    "content": "JavaScript frameworks have revolutionized front-end development, offering developers powerful tools to create dynamic and responsive web applications. In this article, we'll compare the top JavaScript frameworks of 2024, including Vue.js, React, and Angular. We'll discuss their strengths, weaknesses, and use cases to help you make an informed decision on which framework to use for your next project."
+  },
+  {
+    "id": 4,
+    "title": "Designing Responsive Websites: A Complete Guide",
+    "excerpt": "Learn how to create responsive designs that work on all devices.",
+    "author": "Alex Lee",
+    "date": "2024-07-20",
+    "category": "Web Design",
+    "tags": ["CSS", "Responsive Design", "Web Design"],
+    "image": "responsive-design.avif",
+    "content": "Responsive web design is a crucial aspect of modern websites, ensuring that they look and function well on all devices, from desktops to smartphones. In this comprehensive guide, we'll cover the principles of responsive design, including fluid grids, flexible images, and media queries. You'll learn how to create layouts that adapt to different screen sizes and provide a seamless user experience across all devices."
+  },
+  {
+    "id": 5,
+    "title": "Why Vue.js is Perfect for Progressive Web Apps",
+    "excerpt": "An in-depth guide to building PWAs with Vue.js.",
+    "author": "Sarah Connor",
+    "date": "2024-08-01",
+    "category": "Web Development",
+    "tags": ["Vue.js", "PWA", "Frontend"],
+    "image": "vue-pwa.jpg",
+    "content": "Progressive Web Apps (PWAs) are the future of web development, offering the best of both web and mobile apps. Vue.js is an excellent choice for building PWAs due to its simplicity, flexibility, and performance. In this guide, we'll explore the key features of PWAs, including offline support, push notifications, and app-like experiences. We'll also provide step-by-step instructions on how to create a PWA using Vue.js."
+  },
+  {
+    "id": 6,
+    "title": "Building a Modern Landing Page with Vue.js",
+    "excerpt": "Learn how to create a modern landing page using Vue.js and Vuetify.",
+    "author": "Michael Scott",
+    "date": "2024-07-15",
+    "category": "Frontend",
+    "tags": ["Vue.js", "Vuetify", "Frontend"],
+    "image": "vue-landing-page.jpg",
+    "content": "Landing pages are essential for capturing leads and driving conversions. In this article, we'll show you how to build a modern landing page using Vue.js and Vuetify. We'll cover the key components of an effective landing page, including hero sections, call-to-action buttons, and testimonials. You'll learn how to use Vuetify's pre-built components to create a visually appealing and responsive landing page."
+  },
+  {
+    "id": 7,
+    "title": "The Evolution of CSS Grid Layouts",
+    "excerpt": "Explore the history and future of CSS Grid Layouts.",
+    "author": "Emma Watson",
+    "date": "2024-07-10",
+    "category": "Web Design",
+    "tags": ["CSS", "Grid Layout", "Web Design"],
+    "image": "css-grid.jpg",
+    "content": "CSS Grid Layout is a powerful tool for creating complex layouts on the web. In this article, we'll explore the history and evolution of CSS Grid, from its inception to its current state. We'll discuss the benefits of using CSS Grid over traditional layout methods and provide examples of how to create responsive and flexible grid-based designs. Whether you're new to CSS Grid or looking to enhance your skills, this guide has you covered."
+  }
   ]
-  

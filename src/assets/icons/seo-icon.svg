@@ -1,0 +1,23 @@
+
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" rx="20" ry="20" fill="#f0f0f0" />
+
+  <!-- Bar Chart -->
+  <rect x="30" y="140" width="20" height="40" fill="#4caf50" />
+  <rect x="60" y="120" width="20" height="60" fill="#ff9800" />
+  <rect x="90" y="100" width="20" height="80" fill="#2196f3" />
+  <rect x="120" y="80" width="20" height="100" fill="#9c27b0" />
+
+  <!-- Graph Line -->
+  <polyline points="30,140 60,120 90,100 120,80" fill="none" stroke="#f44336" stroke-width="3" />
+
+  <!-- Magnifying Glass -->
+  <g transform="translate(150, 50)">
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#000" stroke-width="4" />
+    <line x1="14" y1="14" x2="30" y2="30" stroke="#000" stroke-width="4" />
+  </g>
+
+  <!-- SEO Text -->
+  <text x="50" y="50" font-family="Arial" font-size="30" fill="#000">SEO</text>
+</svg>
