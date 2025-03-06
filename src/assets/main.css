@@ -6,8 +6,8 @@
     box-sizing: border-box;
     font-family: poppins;
   }
-  #app {
-    width: 100%;
-    border: none;
-    outline: none;
+
+  body {
+    /* padding-top: 40px; */
+    /* Account for fixed header height */
   }

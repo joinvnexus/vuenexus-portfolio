@@ -81,13 +81,13 @@ body {
 }
 
 .header {
-  position: fixed;
+  position: sticky;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
-  /* background: linear-gradient(135deg, #3e4c53, #48d165); */
-  background-color: #3e4c53;
+  background: linear-gradient(175deg, #3e4c53, #48d165);
+  /* background-color: #3e4c53; */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 

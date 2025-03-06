@@ -8,7 +8,7 @@
     <Services/>
     <Testimonials/>
     <Blog/>
-    <Contact />
+   <Contact />
 
   </div>
 </template>
