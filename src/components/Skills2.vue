@@ -1,6 +1,11 @@
 <template>
   <section id="skills" class="skills-section">
     <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Skills & Expertise</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        A quick look at the technologies I specialize in
+      </p>
+
       <!-- Controls -->
       <div class="skills-controls">
         <div class="search-filter">
@@ -129,6 +134,7 @@
   import vuexBadge from '../assets/badges/vuex-badge.svg';
   import woocommerceBadge from '../assets/badges/woocommerce-badge.svg';
   import githubBadge from '../assets/badges/git-badge.svg';
+  import shopifyBadge from '../assets/badges/shopify-badge.svg';
   export default {
     name: 'SuperSkills',
     data() {
@@ -416,10 +422,37 @@
                 ]
               }
             ]
-          }
+          },
+          {
+            id: 12,
+            name: 'Shopify',
+            percent: 88,
+            category: 'eCommerce',
+            endorsements: 18,
+            badge: shopifyBadge,
+            certification: 'Shopify Development Certification',
+            certificationDate: '2023-09-15',
+            dependencies: ['Liquid', 'JavaScript', 'CSS'],
+            history: [
+              { date: '2021-03', description: 'Started working with Shopify platform' },
+              { date: '2022-01', description: 'Developed custom Shopify themes' },
+              { date: '2023-05', description: 'Built complex Shopify stores with custom apps' }
+            ],
+            questions: [
+              {
+                id: 1,
+                text: 'What is the main advantage of Shopify?',
+                options: [
+                  { id: 1, text: 'All-in-one eCommerce solution', correct: true },
+                  { id: 2, text: 'Best for large enterprise systems', correct: false },
+                  { id: 3, text: 'Open source platform', correct: false }
+                ]
+              }
+            ]
+          },
         ]
-      
-        
+
+
 
       };
     },
@@ -652,7 +685,7 @@
 .skill-badge {
   width: 46px;
   height: 46px;
-  
+
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -841,7 +874,8 @@
   }
 
   .search-input {
-    max-width: 100%;
+    width: 100%;
+
   }
 }
 
@@ -855,6 +889,7 @@
     margin-bottom: 3rem;
   }
 
+
   .skill-sphere-container {
     height: 400px;
   }
@@ -867,6 +902,10 @@
 @media (max-width: 480px) {
   .container {
     padding: 0 1rem;
+  }
+
+  .search-input {
+    max-width: 100%;
   }
 
   .skill-card {

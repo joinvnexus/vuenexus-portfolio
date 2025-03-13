@@ -218,7 +218,7 @@ body {
   }
   .container {
     padding: 15px;
-    background-color: #3e4c53;
+    /*background-color: #3e4c53;*/
   }
 
   .logo {

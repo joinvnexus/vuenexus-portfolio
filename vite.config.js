@@ -7,7 +7,9 @@ export default defineConfig({
     __WS_TOKEN__: JSON.stringify(process.env.VITE_WS_TOKEN),
   },
   base: '/joinVnexus/',  // 👈 Ensure this is correct
-  plugins: [vue()],
+  plugins: [
+    vue(),
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

@@ -7,10 +7,14 @@
       <!-- Content Section -->
       <div class="hero-content" data-aos="fade-up">
         <h1>Hey, I'm <span class="highlight">Projoy Naidu</span> 👋</h1>
-        <p class="tagline">The Visionary Behind <span class="highlight">VueNexus</span></p>
+        <p class="tagline">The Visionary Behind <span class="highlight">VueNexus</span>
+          frontend developer specialized in WordPress, Vue.js, and AI-driven coding solutions.
+          I help brands build sleek, responsive websites and dynamic eCommerce solutions.
+        </p>
         <p class="description">
-          I craft <strong>AI-powered, high-performance web experiences</strong> with
-          Vue.js, WordPress & modern technologies. Let's build something amazing together!
+          With expertise in <strong>Vue.js, WordPress, WooCommerce, Shopify, and Tailwind</strong>,
+        I craft <strong>AI-powered, high-performance web experiences</strong> that are both functional and visually stunning. 
+        Let's build something exceptional together!
         </p>
 
         <!-- CTA Buttons -->
@@ -36,12 +40,25 @@
       <!-- Hero Illustration -->
       <div class="hero-illustration" data-aos="fade-left">
         <div class="image-wrapper">
-          <img src="https://picsum.photos/400/400" alt="Projoy Naidu" />
+          <img :src="ImgUrl()" alt="Projoy Naidu" />
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+import imgurl from '../assets/photos/projoy-naidu-vuenexus-frontend-developer-wordpress-expert.jpg'
+export default {
+  name: "HeroSection",
+  data() {
+    return {
+      ImgUrl: () => imgurl
+      // ImgUrl: require("../assets/photos/projoy-naidu-vuenexus-frontend-developer-wordpress-expert.jpg")
+    }
+  }
+}
+</script>
 
 <style scoped>
 /* Modern Gradient Background */

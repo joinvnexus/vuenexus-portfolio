@@ -3,7 +3,7 @@
     <div class="container">
       <!-- Image Section -->
       <div class="about-image" data-aos="fade-right">
-        <img src="https://picsum.photos/400/400" alt="About Me" />
+        <img :src="ImgUrl()" alt="About Me" />
       </div>
 
       <!-- Content Section -->
@@ -12,13 +12,13 @@
         <p class="subtitle">A Glimpse Into Who I Am</p>
         <div class="description-container">
           <p class="description">
-            Hi, I'm <span class="highlight">John Doe</span>, a passionate 
-            <span class="highlight">Frontend Developer</span> with expertise in 
-            crafting responsive and visually stunning websites.
+            Hi, I'm <span class="highlight">Projoy Naidu</span>, the creative mind behind <span class="highlight">VueNexus</span>. 
+            As a passionate <strong>Frontend Developer</strong>, I specialize in building AI-powered, high-performance websites that are 
+            visually stunning and functionally superior.
           </p>
           <p class="description">
-            My journey is fueled by curiosity, creativity, and a drive to solve 
-            complex challenges through elegant code.
+            With expertise in <strong>Vue.js, WordPress, WooCommerce, Shopify, Tailwind,</strong> and more, I help businesses and agencies 
+            create sleek, responsive, and user-friendly digital experiences that leave a lasting impact.
           </p>
         </div>
 
@@ -59,8 +59,14 @@
 </template>
 
 <script>
+import imgurl from '../assets/photos/Responsive WordPress E-commerce Design.jpg'
 export default {
   name: "AboutMe",
+  data() {
+    return {
+      ImgUrl: () => imgurl
+    };
+  }
 };
 </script>
 
@@ -117,6 +123,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
 }
 
 h2 {
@@ -241,6 +248,7 @@ h2 {
   .container {
     gap: 3rem;
     padding: 0 2rem;
+    align-items: center;
   }
 }
 
@@ -264,6 +272,12 @@ h2 {
 }
 
 @media (max-width: 480px) {
+ .container {
+   flex-direction: column;
+   width: 100%; 
+   
+ }
+
   .skill-badge {
     font-size: 0.9rem;
     padding: 0.4rem 1rem;
