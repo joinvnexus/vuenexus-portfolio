@@ -6,7 +6,9 @@ export default defineConfig({
   define: {
     __WS_TOKEN__: JSON.stringify(process.env.VITE_WS_TOKEN),
   },
-  base: '/joinVnexus/',  // 👈 Ensure this is correct
+  base: process.env.NODE_ENV === 'production' ? '/joinVnexus/' : '/',
+
+  // base: '/joinVnexus/',  // 👈 Ensure this is correct
   plugins: [
     vue(),
   ],
