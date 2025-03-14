@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import imgurl from '../assets/photos/Responsive WordPress E-commerce Design.jpg'
+import imgurl from '../assets/photos/Responsive WordPress E-commerce Design1.jpg'
 export default {
   name: "AboutMe",
   data() {
