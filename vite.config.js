@@ -8,7 +8,7 @@ export default defineConfig({
   },
   //base: process.env.NODE_ENV === 'production' ? '/joinVnexus/' : '/',
 
-  base: '/joinvnexus/',  // 👈 Ensure this is correct
+  base: '/joinvnexus/', // This should match your repository name
   plugins: [
     vue(),
   ],

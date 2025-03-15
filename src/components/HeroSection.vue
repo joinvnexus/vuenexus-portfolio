@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import imgurl from '../assets/photos/projoy-naidu-vuenexus-frontend-developer-wordpress-expert.jpg'
+import imgurl from '../assets/photos/Responsive WordPress E-commerce Design1.jpg'
 export default {
   name: "HeroSection",
   data() {
