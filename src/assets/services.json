@@ -28,6 +28,12 @@
       "title": "E-commerce Development",
       "description": "Building high-performance e-commerce platforms using WooCommerce and custom integrations.",
       "icon": "ecommerce-icon.svg"
+    },
+    {
+      "id": 6,
+      "title": "UI/UX Design",
+      "description": "Creating intuitive and visually appealing designs that enhance user experience and drive engagement.",
+      "icon": "uiux-icon.svg"
     }
     
   ]

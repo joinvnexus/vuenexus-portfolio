@@ -1,26 +1,29 @@
 <svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
-  <title>VueNexus Text Logo</title>
+  <title>VueNexus Stylized Logo</title>
   <defs>
-    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:rgb(94, 213, 58);stop-opacity:1" />
-      <stop offset="100%" style="stop-color:rgb(220, 240, 245);stop-opacity:1" />
+    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(0, 51, 102);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(0, 204, 153);stop-opacity:1" />
     </linearGradient>
-    <filter id="f1" x="0" y="0">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
-    </filter>
-    <filter id="f2" x="0" y="0">
-      <feOffset result="offOut" in="SourceAlpha" dx="4" dy="4" />
-      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="4" />
-      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
   </defs>
   
-  <!-- Text with Shadow -->
-  <text x="50%" y="50%" font-family="Verdana" font-size="60" fill="url(#grad3)" text-anchor="middle" filter="url(#f2)">VueNexus</text>
+  <!-- Stylized V and N -->
+  <path d="M100 150 L150 50 L200 150 Z" stroke="url(#grad5)" stroke-width="10" fill="none" filter="url(#glow)"/>
+  <path d="M150 50 L250 150 L200 150 L150 100 Z" stroke="url(#grad5)" stroke-width="10" fill="none" filter="url(#glow)"/>
   
-  <!-- Text with Blur -->
-  <text x="50%" y="50%" font-family="Verdana" font-size="60" fill="url(#grad3)" text-anchor="middle" filter="url(#f1)" opacity="0.7">VueNexus</text>
+  <!-- Circuitry pattern -->
+  <path d="M125 100 L150 75" stroke="url(#grad5)" stroke-width="3" fill="none"/>
+  <circle cx="150" cy="75" r="5" fill="url(#grad5)" />
+  <path d="M175 125 L200 100" stroke="url(#grad5)" stroke-width="3" fill="none"/>
+  <circle cx="200" cy="100" r="5" fill="url(#grad5)" />
   
-  <!-- Main Text -->
-  <text x="50%" y="50%" font-family="Verdana" font-size="60" fill="url(#grad3)" text-anchor="middle">VueNexus</text>
+  <!-- Text with Gradient -->
+  <text x="350" y="125" font-family="Verdana" font-size="60" fill="url(#grad5)" text-anchor="middle">VueNexus</text>
 </svg>

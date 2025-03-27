@@ -2,7 +2,6 @@
   <section class="contact-section" id="contact">
     <h3 class="cta-title">Let's Create Something Amazing!</h3>
     <p class="cta-subtitle">Have a project in mind? Let's discuss how I can help you achieve your goals.</p>
-    <!-- <h2 class="section-title" data-aos="fade-up">Get In Touch</h2> -->
 
     <div class="contact-container">
       <!-- Contact Form -->
@@ -27,73 +26,105 @@
           <textarea id="message" v-model="form.message" placeholder="Your Message" rows="5" required></textarea>
         </div>
 
-        <button type="submit" class="btn-submit">Send Message</button>
+        <button type="submit" class="btn-submit" :disabled="loading">
+          {{ loading ? "Sending..." : "Send Message" }}
+        </button>
       </form>
 
       <!-- Contact Info -->
       <div class="contact-info" data-aos="fade-left">
         <div class="info-item">
           <i class="fas fa-map-marker-alt"></i>
-          <p><a href="https://www.google.com/maps?q=New+York,USA" target="_blank">123 Main Street, City, Country</a></p>
+          <p><a href="https://maps.app.goo.gl/sZt319y95TVa4LJS6" target="_blank"> Sylhet, Bangladesh</a></p>
         </div>
 
         <div class="info-item">
           <i class="fas fa-envelope"></i>
-          <p>contact@example.com</p>
+          <p>projoydevlab@gmail.com</p>
         </div>
 
         <div class="info-item">
           <i class="fas fa-phone-alt"></i>
-          <p>+123 456 7890</p>
+          <p>+8801709-437619</p>
         </div>
         
-    <!-- Google Map Embed Section -->
-    <div class="map-container" data-aos="fade-up">
-     
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d928753.7706231002!2d91.0543106264195!3d24.59111440754703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375054d3d270329f%3A0x866f1ac20b3574a9!2sSylhet%20Division!5e0!3m2!1sen!2sbd!4v1735453338249!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-   </div>
+        <!-- Google Map Embed Section -->
+        <div class="map-container" data-aos="fade-up">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d928753.7706231002!2d91.0543106264195!3d24.59111440754703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375054d3d270329f%3A0x866f1ac20b3574a9!2sSylhet%20Division!5e0!3m2!1sen!2sbd!4v1735453338249!5m2!1sen!2sbd" 
+            width="600" height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
-  name: "Contact",
+  name: 'Contact',
   data() {
     return {
       form: {
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
       },
-      // Google Map Embed URL with location (replace the lat, long, and query parameters accordingly)
-      // mapSrc: 
-      
-
+      loading: false,
     };
   },
   methods: {
-    handleSubmit() {
+    async handleSubmit() {
       if (this.form.name && this.form.email && this.form.subject && this.form.message) {
-        alert("Message Sent!");
-        this.clearForm();
+        this.loading = true;
+
+        try {
+          const templateParams = {
+            name: this.form.name,
+            email: this.form.email,
+            subject: this.form.subject,
+            message: this.form.message,
+          };
+
+          await emailjs.send(
+            'service_y31130n', // <-- Replace with your EmailJS service ID
+            'template_s5sh2kd', // <-- Replace with your EmailJS template ID
+            templateParams,
+            'pXp03B7L-wy872O1B' // <-- Replace with your EmailJS public key
+          );
+
+          alert('Message sent successfully!');
+          this.clearForm();
+        } catch (error) {
+          console.error('Failed to send message:', error);
+          alert('Failed to send message. Please try again later.');
+        } finally {
+          this.loading = false;
+        }
       } else {
-        alert("Please fill out all fields.");
+        alert('Please fill out all fields.');
       }
     },
     clearForm() {
       this.form = {
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
       };
     },
   },
 };
 </script>
+
+
 
 <style scoped>
 .contact-section {
